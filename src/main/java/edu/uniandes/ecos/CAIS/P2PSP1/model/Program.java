@@ -71,9 +71,6 @@ public class Program {
                 part.readPart();
                 this.setSize(part.getSize());
                 this.parts.add(part);
-                System.out.println(part.getName());
-                System.out.println("Tamaño: " + part.getSize());
-                System.out.println("Items: " + part.getItemsNumber());
             }
         }
 
@@ -91,10 +88,5 @@ public class Program {
             e.printStackTrace();
         }
         return br;
-    }
-
-    private void countProgramSize() {
-        Iterator it = this.parts.iterator();
-
     }
 }

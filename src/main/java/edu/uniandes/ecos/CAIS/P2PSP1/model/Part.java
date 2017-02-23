@@ -68,6 +68,7 @@ public class Part {
         CharSequence paramFunction = "(";
         CharSequence singleComment = "/";
         CharSequence blockComment = "*";
+        CharSequence semicolon = ";";
         try {
             String sCurrentLine;
 
@@ -81,9 +82,10 @@ public class Part {
                             this.itemsNumber++;
                         }
                     } else {
-                        System.out.println(sCurrentLine);
+                        if (sCurrentLine.contains(semicolon)) {
+                            this.size++;
+                        }
                     }
-
                 }
             }
         } catch (IOException ex) {

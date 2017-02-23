@@ -11,6 +11,8 @@ public class View
     public static void main( String[] args )
     {
         Controller controller = new Controller();
-        controller.startProgram();        
+        controller.startProgram();
+        controller.showProgramSize();
+        controller.showPartsSize();
     }
 }
