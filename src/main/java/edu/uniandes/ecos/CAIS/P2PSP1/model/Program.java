@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+* Programa: Programa 2 - PSP 1
+* @author Juan Sebastian Paz Prieto 
+* @date  20/02/2017 
+* Clase: Program
+* Descripción: Clase que analiza recursivamente la estructura del proyecto
+* para obtener sus clases, e instanciar objetos de tipo Part.
+**/
 package edu.uniandes.ecos.CAIS.P2PSP1.model;
 
 import java.io.BufferedReader;
@@ -10,7 +13,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -25,38 +27,46 @@ public class Program {
 
     private String srcPath;
 
+    /**
+     * Método que permite acceder al tamaño del programa
+     * @return un valor <code>int</code> que representa el tamaño del programa
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Método que permite establecer un valor para el tamaño del programa
+     * @param size
+     */
     public void setSize(int size) {
         this.size += size;
     }
-
+    
+    /**
+     * Método que permite acceder a una lista de las partes del programa
+     * @return un valor <code>LinkedList</code> que representa las partes del programa
+     */
     public LinkedList<Part> getParts() {
         return parts;
     }
 
-    public void setParts(LinkedList<Part> parts) {
-        this.parts = parts;
-    }
-
-    public String getSrcPath() {
-        return srcPath;
-    }
-
-    public void setSrcPath(String srcPath) {
-        this.srcPath = srcPath;
-    }
-
+    /**
+     * Método constructor de Program
+     * @param srcPath ruta de la estructura del proyecto.
+     */
     public Program(String srcPath) {
         this.srcPath = srcPath;
         this.parts = new LinkedList<Part>();
         this.size = 0;
         this.readProgramStructure(this.srcPath);
-
     }
 
+    /**
+     * Método recursivo que permite leer la estructura del programa, para saber
+     * cuales son las partes de este.
+     * @param path
+     */
     public void readProgramStructure(String path) {
 
         File[] files = new File(path).listFiles();

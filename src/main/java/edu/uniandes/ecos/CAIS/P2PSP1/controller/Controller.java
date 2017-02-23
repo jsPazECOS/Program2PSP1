@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+* Programa: Programa 2 - PSP 1
+* @author Juan Sebastian Paz Prieto 
+* @date  20/02/2017 
+* Clase: Controller
+* Descripción: Esta clase Instancia la clase Program y accede a sus metodos,
+* para mostrar los resultados de conteo del programa.
+**/
 package edu.uniandes.ecos.CAIS.P2PSP1.controller;
 
 import edu.uniandes.ecos.CAIS.P2PSP1.model.Program;
@@ -10,22 +13,13 @@ import edu.uniandes.ecos.CAIS.P2PSP1.model.Part;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/**
- *
- * @author Juan Paz
- */
 public class Controller {
 
     private Program program;
 
-    public Program getProgram() {
-        return program;
-    }
-
-    public void setProgram(Program program) {
-        this.program = program;
-    }
-
+    /**
+     * Método que obtiene el path del programa e crea un objeto de tipo Program
+     */
     public void startProgram() {
         String path = System.getProperty("user.dir");
         path += "/src/main/java";
@@ -33,11 +27,18 @@ public class Controller {
 
     }
 
+    /**
+     * Método que muestra el tamaño del programa
+     */
     public void showProgramSize() {
         System.out.println("Program");
         System.out.println("Total Program Size: "+this.program.getSize());
     }
 
+    /**
+     * Método que obtiene las partes del programa y las recorre para mostrar
+     * Nombre, número de items y tamaño de cada una de las partes
+     */
     public void showPartsSize() {
         System.out.println("Parts");
         LinkedList parts = this.program.getParts();
